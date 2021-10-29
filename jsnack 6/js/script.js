@@ -5,27 +5,33 @@
 const conta = [];
 
 //creo 50 valori e li inserisco nell'array
-for(let i = 0; i <  50 ; i++){
-    let num = Math.floor(Math.random() * 100) + 1;
+while(conta.length < 50){
+    //generazione numero
+    const num = Math.floor(Math.random() * 200) + 1;
     console.log("numero generato = " + num);
-    conta.push(num)
-}
-console.log("numeri attuali nell'array: " + conta);
+    
+    let verifica = false;
 
-//provo a confrontare i numeri dell'array con i numeri nell'array stesso
-let verifica = false;
-for(let i = 0; i < conta.length  && verifica == false; i++){
-    let num = [...conta];
-    console.log("numero creato nel secondo for = " + num);
-    if(num == conta[i]){
-        conta.slice(1),conta[i];
-        let numNew = Math.floor(Math.random() * 100) + 1;
-        console.log("numero generato = " + num);
-        conta.push(numNew)
-    }else {
-        verifica = true;
+    for(let i = 0; i < conta.length; i++){
+        if(num === conta[i]){
+            verifica = true;
+        }
     }
+
+    if(verifica == false){
+        conta.push(num);
+    }
+
+//prova di verificca
+
+    // if(conta.length < 50 && ){
+    //    let numex = parseInt(prompt("inserire un numero a mano"));
+    //     conta.push(numex);
+    //     console.log("numeri generati a mano = " + numex);
+    // } 
 }
+
+
 
 // inserimento in-page
 const text = document.getElementById("list");
