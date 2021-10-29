@@ -10,19 +10,24 @@ while(conta.length < 50){
     const num = Math.floor(Math.random() * 200) + 1;
     console.log("numero generato = " + num);
     
-    let verifica = false;
+    //verifica con .includes
+    /* let verifica = conta.includes(num) */
 
+
+    //verifica con for
+    let verifica = false;
     for(let i = 0; i < conta.length; i++){
         if(num === conta[i]){
             verifica = true;
         }
     }
 
+    //push all'array
     if(verifica == false){
         conta.push(num);
     }
 
-//prova di verificca
+//prova di verificca per il non raggiungimento dei numeri al massimo
 
     // if(conta.length < 50 && ){
     //    let numex = parseInt(prompt("inserire un numero a mano"));
